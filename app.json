@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "Vardhman Admin",
+    "slug": "vardhman-admin",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "vardhman-admin",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#FAF8F5",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vardhman.admin",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Vardhman Admin needs access to your photos to upload product and school catalog images."
+      }
+    },
+    "android": {
+      "package": "com.vardhman.admin",
+      "allowBackup": false,
+      "adaptiveIcon": {
+        "backgroundColor": "#FAF8F5",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-image",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Vardhman Admin needs access to your photos to upload product and school catalog images."
+        }
+      ],
+      "expo-secure-store"
+    ]
+  }
+}
