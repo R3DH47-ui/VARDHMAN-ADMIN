@@ -137,11 +137,6 @@ export default function AddSchoolScreen() {
         title={existingSchool ? 'Admin Edit School' : 'Admin Add School'}
         subtitle="PORTAL ADMIN"
         showBack
-        rightActions={
-          <View style={styles.avatarCircle}>
-            <Text style={styles.avatarText}>RK</Text>
-          </View>
-        }
       />
 
       <ScrollView
@@ -263,19 +258,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     backgroundColor: colors.background,
-  },
-  avatarCircle: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#E8E3DE',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: {
-    fontFamily: fonts.bold,
-    fontSize: 12,
-    color: colors.ink,
   },
   container: {
     flex: 1,

@@ -46,6 +46,10 @@ const INITIAL_PRODUCTS = [
     category: 'Shirts and tops',
     gender: 'Boys',
     sku: 'WHS-GFS-01',
+    image: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Formal poly-cotton uniform shirt with embroidered school crest on pocket. Breathable, easy-iron fabric.',
     sizes: [
@@ -68,6 +72,10 @@ const INITIAL_PRODUCTS = [
     category: 'Bottoms',
     gender: 'Girls',
     sku: 'GRP-SMC-02',
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Pleated pinafore with adjustable side buckle straps and neat knife pleats.',
     sizes: [
@@ -88,6 +96,10 @@ const INITIAL_PRODUCTS = [
     category: 'Bottoms',
     gender: 'Boys',
     sku: 'NVT-DAV-03',
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Deep navy uniform trousers with sharp center creases and reinforced waistband.',
     sizes: [
@@ -109,6 +121,10 @@ const INITIAL_PRODUCTS = [
     category: 'Winter',
     gender: 'Unisex',
     sku: 'WVS-GFS-04',
+    image: 'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Forest green acrylic knit sweater with ribbed cuffs and neck tipping.',
     sizes: [
@@ -129,6 +145,10 @@ const INITIAL_PRODUCTS = [
     category: 'Accessories',
     gender: 'Unisex',
     sku: 'SST-SMC-05',
+    image: 'https://images.unsplash.com/photo-1589756823695-278bc923f962?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1589756823695-278bc923f962?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Diagonal striped woven uniform tie with reinforced loop and tipping.',
     sizes: [{ size: 0, stock: 110 }],
@@ -146,6 +166,10 @@ const INITIAL_PRODUCTS = [
     category: 'Shirts and tops',
     gender: 'Unisex',
     sku: 'HPE-GFS-06',
+    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400&auto=format&fit=crop&q=80',
+    ],
     description:
       'Sports house cotton polo t-shirt with contrast white collar tipping.',
     sizes: [{ size: 28, stock: 0 }],
@@ -163,6 +187,10 @@ const INITIAL_PRODUCTS = [
     category: 'Accessories',
     gender: 'Unisex',
     sku: 'CSB-GFS-07',
+    image: 'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'Adjustable woven belt with school crest metal buckle.',
     sizes: [{ size: 0, stock: 85 }],
   },
@@ -179,6 +207,10 @@ const INITIAL_PRODUCTS = [
     category: 'Footwear',
     gender: 'Unisex',
     sku: 'BSO-SMC-08',
+    image: 'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'Formal synthetic leather uniform shoes with anti-skid rubber sole.',
     sizes: [
       { size: 5, stock: 2 },
@@ -198,6 +230,10 @@ const INITIAL_PRODUCTS = [
     category: 'Winter',
     gender: 'Unisex',
     sku: 'FSB-DAV-09',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'Navy blue tailored wool-blend blazer with embroidered school crest.',
     sizes: [{ size: 34, stock: 0 }],
   },
@@ -214,6 +250,10 @@ const INITIAL_PRODUCTS = [
     category: 'Bottoms',
     gender: 'Unisex',
     sku: 'STP-DAV-10',
+    image: 'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'Navy micro-poly track pants with elastic waist and side piping.',
     sizes: [{ size: 30, stock: 38 }],
   },
@@ -230,6 +270,10 @@ const INITIAL_PRODUCTS = [
     category: 'Accessories',
     gender: 'Unisex',
     sku: 'CSS-SMC-11',
+    image: 'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'White ankle-length cotton socks with school stripe band.',
     sizes: [{ size: 0, stock: 120 }],
   },
@@ -246,6 +290,10 @@ const INITIAL_PRODUCTS = [
     category: 'Shirts and tops',
     gender: 'Unisex',
     sku: 'HPE-GFS-12',
+    image: 'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&auto=format&fit=crop&q=80',
+    photos: [
+      'https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&auto=format&fit=crop&q=80',
+    ],
     description: 'Royal blue breathable pique cotton house sports jersey.',
     sizes: [{ size: 28, stock: 0 }],
   },

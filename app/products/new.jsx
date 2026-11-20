@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   View,
   Text,
@@ -26,6 +26,53 @@ import { SizeStockTable } from '@/components/products/SizeStockTable';
 import { ClassChipGrid } from '@/components/schools/ClassChipGrid';
 import { useAppStore } from '@/store/useAppStore';
 import { PRODUCT_CATEGORIES, GENDERS } from '@/constants';
+
+function validateProductData({ name, sellingPrice, mrp, description, sizes }) {
+  const trimmedName = name.trim();
+  if (!trimmedName) {
+    return 'Please enter an item name.';
+  }
+  if (trimmedName.length > 100) {
+    return 'Item name must not exceed 100 characters.';
+  }
+
+  const numPrice = Number(sellingPrice);
+  if (!sellingPrice.trim() || Number.isNaN(numPrice) || numPrice <= 0 || numPrice > 100000) {
+    return 'Please enter a valid selling price between ₹1 and ₹1,00,000.';
+  }
+
+  const numMrp = mrp.trim() ? Number(mrp) : numPrice;
+  if (Number.isNaN(numMrp) || numMrp <= 0 || numMrp > 100000) {
+    return 'Please enter a valid MRP between ₹1 and ₹1,00,000.';
+  }
+
+  if (numPrice > numMrp) {
+    return `Selling price (₹${numPrice}) cannot be greater than MRP (₹${numMrp}).`;
+  }
+
+  if (description.trim().length > 1000) {
+    return 'Description must not exceed 1000 characters.';
+  }
+
+  const seenSizes = new Set();
+  for (const s of sizes) {
+    const sKey = String(s.size || '').trim().toLowerCase();
+    if (!sKey) {
+      return 'All sizes in the inventory table must have a size label.';
+    }
+    if (seenSizes.has(sKey)) {
+      return `Duplicate size "${s.size}" found. Each size must be unique.`;
+    }
+    seenSizes.add(sKey);
+
+    const sStock = Number(s.stock);
+    if (Number.isNaN(sStock) || sStock < 0 || !Number.isInteger(sStock) || sStock > 50000) {
+      return `Stock for size "${s.size}" must be a whole number between 0 and 50,000.`;
+    }
+  }
+
+  return null;
+}
 
 export default function AddProductScreen() {
   const router = useRouter();
@@ -95,61 +142,21 @@ export default function AddProductScreen() {
   const availableClasses = selectedSchool?.classes || [];
 
   const handlePublish = async () => {
+    const validationError = validateProductData({
+      name,
+      sellingPrice,
+      mrp,
+      description,
+      sizes,
+    });
+    if (validationError) {
+      Alert.alert('Validation Error', validationError);
+      return;
+    }
+
     const trimmedName = name.trim();
-    if (!trimmedName) {
-      Alert.alert('Validation Error', 'Please enter an item name.');
-      return;
-    }
-    if (trimmedName.length > 100) {
-      Alert.alert('Validation Error', 'Item name must not exceed 100 characters.');
-      return;
-    }
-
     const numPrice = Number(sellingPrice);
-    if (!sellingPrice.trim() || isNaN(numPrice) || numPrice <= 0 || numPrice > 100000) {
-      Alert.alert('Validation Error', 'Please enter a valid selling price between ₹1 and ₹1,00,000.');
-      return;
-    }
-
     const numMrp = mrp.trim() ? Number(mrp) : numPrice;
-    if (isNaN(numMrp) || numMrp <= 0 || numMrp > 100000) {
-      Alert.alert('Validation Error', 'Please enter a valid MRP between ₹1 and ₹1,00,000.');
-      return;
-    }
-
-    if (numPrice > numMrp) {
-      Alert.alert(
-        'Validation Error',
-        `Selling price (₹${numPrice}) cannot be greater than MRP (₹${numMrp}).`
-      );
-      return;
-    }
-
-    if (description.trim().length > 1000) {
-      Alert.alert('Validation Error', 'Description must not exceed 1000 characters.');
-      return;
-    }
-
-    // Size validation: unique sizes, non-negative stock
-    const seenSizes = new Set();
-    for (const s of sizes) {
-      const sKey = String(s.size || '').trim().toLowerCase();
-      if (!sKey) {
-        Alert.alert('Validation Error', 'All sizes in the inventory table must have a size label.');
-        return;
-      }
-      if (seenSizes.has(sKey)) {
-        Alert.alert('Validation Error', `Duplicate size "${s.size}" found. Each size must be unique.`);
-        return;
-      }
-      seenSizes.add(sKey);
-
-      const sStock = Number(s.stock);
-      if (isNaN(sStock) || sStock < 0 || !Number.isInteger(sStock) || sStock > 50000) {
-        Alert.alert('Validation Error', `Stock for size "${s.size}" must be a whole number between 0 and 50,000.`);
-        return;
-      }
-    }
 
     setIsSubmitting(true);
     try {
@@ -215,9 +222,6 @@ export default function AddProductScreen() {
             >
               <Text style={styles.draftText}>Save draft</Text>
             </TouchableOpacity>
-            <View style={styles.avatarCircle}>
-              <Text style={styles.avatarText}>RK</Text>
-            </View>
           </View>
         }
       />
@@ -470,19 +474,6 @@ const styles = StyleSheet.create({
     fontFamily: fonts.semiBold,
     fontSize: 12,
     color: colors.muted,
-  },
-  avatarCircle: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#E8E3DE',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: {
-    fontFamily: fonts.bold,
-    fontSize: 12,
-    color: colors.ink,
   },
   container: {
     flex: 1,

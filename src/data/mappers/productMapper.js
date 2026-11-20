@@ -24,7 +24,8 @@ export function mapProductFromApi(dto) {
     category: dto.category ?? '',
     gender: dto.gender ?? 'Unisex',
     sku: dto.sku ?? '',
-    image: dto.image ?? dto.imageUrl ?? null,
+    image: dto.image ?? dto.imageUrl ?? (Array.isArray(dto.photos) ? dto.photos[0] : null),
+    photos: Array.isArray(dto.photos) ? dto.photos : (dto.image ? [dto.image] : []),
     description: dto.description ?? '',
     sizes: Array.isArray(dto.sizes)
       ? dto.sizes.map((s) => ({
@@ -54,6 +55,8 @@ export function mapProductToApi(form) {
     category: form.category || '',
     gender: form.gender || 'Unisex',
     sku: (form.sku || '').trim(),
+    image: form.image || form.photos?.[0] || null,
+    photos: Array.isArray(form.photos) ? form.photos : (form.image ? [form.image] : []),
     description: (form.description || '').trim(),
     sizes: Array.isArray(form.sizes) ? form.sizes : [],
   };

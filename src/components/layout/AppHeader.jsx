@@ -71,10 +71,6 @@ export function AppHeader({
                   </View>
                 )}
               </TouchableOpacity>
-
-              <View style={styles.avatarCircle}>
-                <Text style={styles.avatarText}>RK</Text>
-              </View>
             </View>
           )}
         </View>
@@ -173,20 +169,5 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bold,
     fontSize: 9,
     lineHeight: 11,
-  },
-  avatarCircle: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#E8E3DE',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#D9D4CE',
-  },
-  avatarText: {
-    fontFamily: fonts.bold,
-    fontSize: 12,
-    color: colors.ink,
   },
 });

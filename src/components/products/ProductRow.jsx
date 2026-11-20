@@ -19,6 +19,7 @@ export function ProductRow({ product, onPress }) {
       <ProductThumb
         uri={product.image || product.photos?.[0]}
         name={product.name}
+        category={product.category}
         size={52}
         style={styles.thumb}
       />

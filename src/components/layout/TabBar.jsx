@@ -15,7 +15,7 @@ import { useAppStore } from '@/store/useAppStore';
 
 const TABS = [
   { name: 'index', label: 'Dashboard', icon: 'dashboard', path: '/(tabs)' },
-  { name: 'products', label: 'Products', icon: 'inventory', path: '/(tabs)/products' },
+  { name: 'products', label: 'Products', icon: 'shopping-bag', path: '/(tabs)/products' },
   { name: 'schools', label: 'Schools', icon: 'school', path: '/(tabs)/schools' },
   { name: 'notifications', label: 'Alerts', icon: 'notifications', path: '/(tabs)/notifications' },
 ];
@@ -56,27 +56,25 @@ function TabItem({ tab, isFocused, onPress, unreadCount, reduceMotion }) {
           }),
         ]).start();
       }
+    } else if (reduceMotion) {
+      circleOpacity.setValue(0);
+      circleScale.setValue(0);
+      iconScale.setValue(1);
     } else {
-      if (reduceMotion) {
-        circleOpacity.setValue(0);
+      Animated.parallel([
+        Animated.timing(circleOpacity, {
+          toValue: 0,
+          duration: 150,
+          useNativeDriver: true,
+        }),
+        Animated.timing(iconScale, {
+          toValue: 1,
+          duration: 150,
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
         circleScale.setValue(0);
-        iconScale.setValue(1);
-      } else {
-        Animated.parallel([
-          Animated.timing(circleOpacity, {
-            toValue: 0,
-            duration: 150,
-            useNativeDriver: true,
-          }),
-          Animated.timing(iconScale, {
-            toValue: 1,
-            duration: 150,
-            useNativeDriver: true,
-          }),
-        ]).start(() => {
-          circleScale.setValue(0);
-        });
-      }
+      });
     }
   }, [isFocused, reduceMotion, circleScale, circleOpacity, iconScale]);
 
@@ -144,7 +142,7 @@ export function TabBar({ state, descriptors, navigation }) {
         /* ignore */
       }
     };
-    checkMotion();
+    void checkMotion();
     const sub = AccessibilityInfo.addEventListener('reduceMotionChanged', (val) => {
       setReduceMotion(val);
     });
@@ -178,12 +176,10 @@ export function TabBar({ state, descriptors, navigation }) {
 
             if (navigation && typeof navigation.navigate === 'function') {
               navigation.navigate(route.name);
+            } else if (route.name === 'index') {
+              router.navigate('/(tabs)');
             } else {
-              if (route.name === 'index') {
-                router.navigate('/(tabs)');
-              } else {
-                router.navigate(`/(tabs)/${route.name}`);
-              }
+              router.navigate(`/(tabs)/${route.name}`);
             }
           };
 

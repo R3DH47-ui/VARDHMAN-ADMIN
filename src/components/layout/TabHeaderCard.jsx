@@ -37,7 +37,7 @@ export function TabHeaderCard() {
           </Text>
         </View>
 
-        {/* Right: Search, Bell with badge, RK Profile circle */}
+        {/* Right: Search, Bell with badge */}
         <View style={styles.rightActions}>
           {/* Search Trigger */}
           <TouchableOpacity
@@ -67,11 +67,6 @@ export function TabHeaderCard() {
               </View>
             )}
           </TouchableOpacity>
-
-          {/* RK Profile Circle (40px, #EFEEEB bg, Inter 600) */}
-          <View style={styles.avatarCircle}>
-            <Text style={styles.avatarText}>RK</Text>
-          </View>
         </View>
       </View>
     </View>
@@ -163,18 +158,5 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bold,
     fontSize: 9,
     lineHeight: 11,
-  },
-  avatarCircle: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#EFEEEB',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  avatarText: {
-    fontFamily: fonts.semiBold,
-    fontSize: 13,
-    color: '#1A1A1A',
   },
 });
