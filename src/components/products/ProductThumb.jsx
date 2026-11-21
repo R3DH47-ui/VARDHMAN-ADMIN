@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Image } from 'expo-image';
+import { View, StyleSheet, Image } from 'react-native';
 import { colors, radii } from '@/theme';
 import { Icon } from '@/components/ui';
 
 function getFallbackIcon(name, category) {
   const text = `${name || ''} ${category || ''}`.toLowerCase();
-  if (text.includes('shirt') || text.includes('t-shirt') || text.includes('polo') || text.includes('top') || text.includes('blazer') || text.includes('sweater') || text.includes('pinafore')) {
+  if (
+    text.includes('shirt') ||
+    text.includes('t-shirt') ||
+    text.includes('polo') ||
+    text.includes('top') ||
+    text.includes('blazer') ||
+    text.includes('sweater') ||
+    text.includes('pinafore')
+  ) {
     return 'checkroom';
   }
   return 'shopping-bag';
@@ -15,22 +22,35 @@ function getFallbackIcon(name, category) {
 export function ProductThumb({ uri, name, category, size = 52, style }) {
   const [hasError, setHasError] = useState(false);
 
-  const imageSource = typeof uri === 'string' ? { uri } : uri;
+  // Accepts both local require() (number/object) and remote string URL ("https://...")
+  let imageSource = null;
+  if (uri) {
+    if (typeof uri === 'string') {
+      const cleanUri = uri.trim();
+      if (cleanUri.length > 0) {
+        imageSource = { uri: cleanUri };
+      }
+    } else {
+      imageSource = uri;
+    }
+  }
 
-  if (uri && !hasError) {
+  if (imageSource && !hasError) {
     return (
-      <Image
-        source={imageSource}
+      <View
         style={[
-          styles.image,
+          styles.container,
           { width: size, height: size, borderRadius: radii.md },
           style,
         ]}
-        contentFit="cover"
-        transition={200}
-        cachePolicy="memory-disk"
-        onError={() => setHasError(true)}
-      />
+      >
+        <Image
+          source={imageSource}
+          style={styles.image}
+          resizeMode="cover"
+          onError={() => setHasError(true)}
+        />
+      </View>
     );
   }
 
@@ -50,16 +70,21 @@ export function ProductThumb({ uri, name, category, size = 52, style }) {
 }
 
 const styles = StyleSheet.create({
-  image: {
+  container: {
     backgroundColor: '#F3F0EC',
     borderWidth: 1,
     borderColor: '#E8E3DE',
+    overflow: 'hidden',
+  },
+  image: {
+    width: '100%',
+    height: '100%',
   },
   fallback: {
     backgroundColor: '#F3F0EC',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: colors.border,
+    borderColor: '#E8E3DE',
   },
 });
