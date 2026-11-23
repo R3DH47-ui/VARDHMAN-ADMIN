@@ -1,0 +1,262 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 370" width="100%" height="100%">
+  <style>
+    :root {
+      --bg: #0C0D0E;
+      --border: rgba(255, 255, 255, 0.08);
+      --title: #FFFFFF;
+      --sub: #909096;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #FAF8F5;
+        --border: #E8E3DE;
+        --title: #1A1A1A;
+        --sub: #5F5E5E;
+      }
+      .bg-canvas { fill: #FAF8F5 !important; stroke: #E8E3DE !important; }
+      .header-title { fill: #1A1A1A !important; }
+      .header-sub { fill: #5F5E5E !important; }
+    }
+    .sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .bg-canvas { fill: #0C0D0E; }
+    .header-title { fill: #FFFFFF; }
+    .header-sub { fill: #909096; }
+
+    @keyframes softPulse {
+      0%, 100% { opacity: 0.95; }
+      50% { opacity: 1; }
+    }
+    .swatch-anim {
+      animation: softPulse 4s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .swatch-anim { animation: none !important; }
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="940" height="370" rx="18" class="bg-canvas" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="24" y="30" font-size="12" font-weight="700" letter-spacing="0.8" class="sans header-title">CENTRALIZED COLOR SYSTEM (SRC/THEME/COLORS.JS)</text>
+  <text x="916" y="30" font-size="11" font-weight="500" text-anchor="end" class="sans header-sub">12 Canonical Foundation Tokens</text>
+
+  <!-- Color Swatches Grid -->
+  
+    <g transform="translate(24, 48)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#B0000F" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">primary</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#B0000F</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Canonical Crimson</text>
+      </g>
+    </g>
+    
+    <g transform="translate(250, 48)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#840008" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">primaryDark</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#840008</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Deep Crimson / Pressed</text>
+      </g>
+    </g>
+    
+    <g transform="translate(476, 48)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#1A1A1A" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">ink</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#1A1A1A</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">High-Contrast Charcoal</text>
+      </g>
+    </g>
+    
+    <g transform="translate(702, 48)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#5F5E5E" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">secondary</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#5F5E5E</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Medium Gray / Metadata</text>
+      </g>
+    </g>
+    
+    <g transform="translate(24, 150)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#6B6B6B" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">muted</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#6B6B6B</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Low-Emphasis Gray</text>
+      </g>
+    </g>
+    
+    <g transform="translate(250, 150)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#FAF8F5" stroke="#E8E3DE" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#1A1A1A" class="sans">background</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(0,0,0,0.06)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#1A1A1A" class="sans">#FAF8F5</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="#5F5E5E" class="sans">Warm Canvas Surface</text>
+      </g>
+    </g>
+    
+    <g transform="translate(476, 150)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#FFFFFF" stroke="#E8E3DE" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#1A1A1A" class="sans">surface</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(0,0,0,0.06)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#1A1A1A" class="sans">#FFFFFF</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="#5F5E5E" class="sans">Pure White Cards / Sheets</text>
+      </g>
+    </g>
+    
+    <g transform="translate(702, 150)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#E8E3DE" stroke="#D0CAC4" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#1A1A1A" class="sans">border</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(0,0,0,0.06)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#1A1A1A" class="sans">#E8E3DE</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="#5F5E5E" class="sans">Warm Line Dividers</text>
+      </g>
+    </g>
+    
+    <g transform="translate(24, 252)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#1E9E5A" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">success</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#1E9E5A</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Botanical Green (Active)</text>
+      </g>
+    </g>
+    
+    <g transform="translate(250, 252)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#E08A00" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">warningText</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#E08A00</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Warm Amber (Low Stock)</text>
+      </g>
+    </g>
+    
+    <g transform="translate(476, 252)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#BA1A1A" stroke="rgba(0,0,0,0.12)" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#FFFFFF" class="sans">error</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(255,255,255,0.18)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#FFFFFF" class="sans">#BA1A1A</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="rgba(255,255,255,0.75)" class="sans">Alert Red (Critical)</text>
+      </g>
+    </g>
+    
+    <g transform="translate(702, 252)" class="swatch-anim">
+      <!-- Shadow & Card Base -->
+      <rect width="210" height="88" rx="12" fill="#FDECEC" stroke="#F7C6C6" stroke-width="1.2" />
+      
+      <!-- Content Overlay -->
+      <g transform="translate(14, 16)">
+        <!-- Token Name -->
+        <text x="0" y="14" font-size="13" font-weight="700" fill="#1A1A1A" class="sans">blush</text>
+        
+        <!-- Hex Code -->
+        <rect x="0" y="24" width="76" height="20" rx="5" fill="rgba(0,0,0,0.06)" />
+        <text x="38" y="38" font-size="11" font-weight="600" text-anchor="middle" fill="#1A1A1A" class="sans">#FDECEC</text>
+        
+        <!-- Role -->
+        <text x="0" y="58" font-size="10" font-weight="500" fill="#5F5E5E" class="sans">Crimson Tint / New Badge</text>
+      </g>
+    </g>
+    
+</svg>
