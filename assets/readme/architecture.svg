@@ -28,12 +28,12 @@
     </filter>
 
     <!-- Motion Paths for animateMotion -->
-    <path id="pathFlow1" d="M 165,190 L 225,190" fill="none" />
-    <path id="pathFlow2" d="M 440,190 L 765,190" fill="none" />
-    <path id="pathFlow3" d="M 765,215 L 705,215" fill="none" />
-    <path id="pathFlow4" d="M 705,340 L 765,340" fill="none" />
-    <path id="pathFlow5" d="M 870,265 L 870,280" fill="none" />
-    <path id="pathFlow6" d="M 225,340 L 165,340" fill="none" />
+    <path id="pathFlow1" d="M 160,190 L 228,190" fill="none" />
+    <path id="pathFlow2" d="M 430,190 L 513,190" fill="none" />
+    <path id="pathFlow3" d="M 705,190 L 788,190" fill="none" />
+    <path id="pathFlow4" d="M 705,340 L 788,340" fill="none" />
+    <path id="pathFlow5" d="M 882,275 L 882,258" fill="none" />
+    <path id="pathFlow6" d="M 228,340 L 160,340" fill="none" />
   </defs>
 
   <style>
@@ -41,7 +41,7 @@
     .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
     /* Static Base Styles: 100% visible by default, robust across GitHub renderers */
-    .node-card { fill: #FFFFFF; stroke: #E8E3DE; stroke-width: 1.2; filter: url(#nodeShadow); }
+    .node-card { fill: #FFFFFF; stroke: #E8E4DE; stroke-width: 1.2; filter: url(#nodeShadow); }
     .zone-box { stroke-width: 1.2; stroke-dasharray: 6 5; }
 
     /* Animated Dashed Connectors */
@@ -52,15 +52,15 @@
 
     /* Subtle Border Pulse for Active Zones (continuous cycle) */
     @keyframes pulsePresentation {
-      0%, 100% { stroke: #E8E3DE; }
+      0%, 100% { stroke: #E8E4DE; }
       20%, 40% { stroke: #B0000F; }
     }
     @keyframes pulseData {
-      0%, 100% { stroke: #E8E3DE; }
+      0%, 100% { stroke: #E8E4DE; }
       35%, 55% { stroke: #B45309; }
     }
     @keyframes pulseClient {
-      0%, 100% { stroke: #E8E3DE; }
+      0%, 100% { stroke: #E8E4DE; }
       55%, 85% { stroke: #1E9E5A; }
     }
     .card-pulse-presentation { animation: pulsePresentation 6s ease-in-out infinite; }
@@ -83,8 +83,8 @@
     }
   </style>
 
-  <!-- Base Panel: Warm Paper (#FAF8F5) with subtle border (#E8E3DE) -->
-  <rect x="10" y="10" width="1000" height="600" rx="18" fill="#FAF8F5" stroke="#E8E3DE" stroke-width="1.5" />
+  <!-- Base Panel: Warm Paper (#FAF8F5) with subtle border (#E8E4DE) -->
+  <rect x="10" y="10" width="1000" height="600" rx="18" fill="#FAF8F5" stroke="#E8E4DE" stroke-width="1.5" />
 
   <!-- Diagram Title Header -->
   <g transform="translate(35, 40)">
@@ -96,170 +96,171 @@
   </g>
 
   <!-- Top Divider -->
-  <line x1="35" y1="115" x2="985" y2="115" stroke="#E8E3DE" stroke-width="1" />
+  <line x1="35" y1="115" x2="985" y2="115" stroke="#E8E4DE" stroke-width="1" />
 
   <!-- ============================================================
-       COLUMN 1: USER / OPERATOR RUNTIME (x = 35 to 165)
+       COLUMN 1: USER / OPERATOR RUNTIME (x = 35 to 160)
        ============================================================ -->
   <!-- Floor Operator Node -->
   <g>
-    <rect x="35" y="130" width="130" height="135" rx="12" class="node-card" />
-    <rect x="50" y="145" width="32" height="32" rx="8" fill="#FDECEC" class="glyph-box" />
-    <path d="M 60 153 L 72 153 M 60 160 L 72 160 M 60 167 L 68 167" stroke="#B0000F" stroke-width="1.8" stroke-linecap="round" />
-    <text x="50" y="196" font-size="14.5" font-weight="700" fill="#1A1A1A" class="sans">Floor Operator</text>
-    <text x="50" y="214" font-size="13" font-weight="500" fill="#5F5E5E" class="sans">Touch Surface</text>
-    <text x="50" y="232" font-size="12" font-weight="600" fill="#B0000F" class="sans">44 pt Targets</text>
+    <rect x="35" y="130" width="125" height="135" rx="12" class="node-card" />
+    <rect x="48" y="145" width="32" height="32" rx="8" fill="#FDECEC" class="glyph-box" />
+    <path d="M 58 153 L 70 153 M 58 160 L 70 160 M 58 167 L 66 167" stroke="#B0000F" stroke-width="1.8" stroke-linecap="round" />
+    <text x="48" y="196" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Floor Operator</text>
+    <text x="48" y="214" font-size="12.5" font-weight="500" fill="#5F5E5E" class="sans">Touch Surface</text>
+    <text x="48" y="232" font-size="12" font-weight="600" fill="#B0000F" class="sans">44 pt Targets</text>
   </g>
 
   <!-- Native View Tree / Fabric View -->
   <g>
-    <rect x="35" y="280" width="130" height="135" rx="12" class="node-card" />
-    <rect x="50" y="295" width="32" height="32" rx="8" fill="#E6F4EA" class="glyph-box" />
-    <circle cx="66" cy="311" r="7" fill="none" stroke="#1E9E5A" stroke-width="1.8" />
-    <path d="M 66 307 L 66 311 L 69 313" stroke="#1E9E5A" stroke-width="1.5" stroke-linecap="round" />
-    <text x="50" y="346" font-size="14.5" font-weight="700" fill="#1A1A1A" class="sans">Native Views</text>
-    <text x="50" y="364" font-size="13" font-weight="500" fill="#5F5E5E" class="sans">Fabric Renderer</text>
-    <text x="50" y="382" font-size="12" font-weight="600" fill="#1E9E5A" class="sans">Floating TabBar</text>
+    <rect x="35" y="280" width="125" height="135" rx="12" class="node-card" />
+    <rect x="48" y="295" width="32" height="32" rx="8" fill="#E6F4EA" class="glyph-box" />
+    <circle cx="64" cy="311" r="7" fill="none" stroke="#1E9E5A" stroke-width="1.8" />
+    <path d="M 64 307 L 64 311 L 67 313" stroke="#1E9E5A" stroke-width="1.5" stroke-linecap="round" />
+    <text x="48" y="346" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Native Views</text>
+    <text x="48" y="364" font-size="12.5" font-weight="500" fill="#5F5E5E" class="sans">Fabric Renderer</text>
+    <text x="48" y="382" font-size="12" font-weight="600" fill="#1E9E5A" class="sans">Floating TabBar</text>
   </g>
 
   <!-- ============================================================
-       ZONE 1: PRESENTATION LAYER (x = 210 to 455)
+       ZONE 1: PRESENTATION LAYER (x = 220 to 445)
        ============================================================ -->
-  <rect x="210" y="125" width="245" height="295" rx="14" class="zone-box" stroke="#B0000F" fill="#FAF8F5" />
-  <rect x="225" y="113" width="175" height="22" rx="6" fill="#B0000F" />
-  <text x="312" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">PRESENTATION (app/)</text>
+  <rect x="220" y="125" width="225" height="295" rx="14" class="zone-box" stroke="#B0000F" fill="#FAF8F5" />
+  <rect x="235" y="113" width="175" height="22" rx="6" fill="#B0000F" />
+  <text x="322.5" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">PRESENTATION (app/)</text>
 
   <!-- Node 1A: Expo Router Tabs & Screens -->
   <g>
-    <rect x="225" y="140" width="215" height="118" rx="10" class="node-card card-pulse-presentation" />
-    <rect x="240" y="152" width="28" height="28" rx="6" fill="#FDECEC" class="glyph-box" />
-    <path d="M 247 164 L 261 164 M 247 169 L 257 169" stroke="#B0000F" stroke-width="1.8" stroke-linecap="round" />
-    <text x="278" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Expo Router Tabs</text>
-    <text x="278" y="182" font-size="12.5" font-weight="600" fill="#B0000F" class="sans">(tabs)/ Navigation</text>
-    <text x="240" y="210" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">Dashboard, Products,</text>
-    <text x="240" y="228" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">Schools &amp; Alerts routes</text>
+    <rect x="235" y="140" width="195" height="118" rx="10" class="node-card card-pulse-presentation" />
+    <rect x="248" y="152" width="28" height="28" rx="6" fill="#FDECEC" class="glyph-box" />
+    <path d="M 255 164 L 269 164 M 255 169 L 265 169" stroke="#B0000F" stroke-width="1.8" stroke-linecap="round" />
+    <text x="284" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Expo Router Tabs</text>
+    <text x="284" y="182" font-size="12" font-weight="600" fill="#B0000F" class="sans">(tabs)/ Navigation</text>
+    <text x="248" y="210" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">Dashboard, Products,</text>
+    <text x="248" y="228" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">Schools &amp; Alerts routes</text>
   </g>
 
   <!-- Node 1B: Domain Controllers & Layout -->
   <g>
-    <rect x="225" y="275" width="215" height="120" rx="10" class="node-card card-pulse-presentation" />
-    <rect x="240" y="288" width="28" height="28" rx="6" fill="#F4F1ED" class="glyph-box" />
-    <path d="M 247 301 L 261 301 M 247 306 L 257 306 M 247 311 L 253 311" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round" />
-    <text x="278" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Domain Components</text>
-    <text x="278" y="318" font-size="12.5" font-weight="600" fill="#5F5E5E" class="sans">src/components/</text>
-    <text x="240" y="348" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">KpiGrid, LowStockCard,</text>
-    <text x="240" y="366" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">TabBar, AppHeader &amp; Steppers</text>
+    <rect x="235" y="275" width="195" height="120" rx="10" class="node-card card-pulse-presentation" />
+    <rect x="248" y="288" width="28" height="28" rx="6" fill="#F4F1ED" class="glyph-box" />
+    <path d="M 255 301 L 269 301 M 255 306 L 265 306 M 255 311 L 261 311" stroke="#1A1A1A" stroke-width="1.8" stroke-linecap="round" />
+    <text x="284" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Domain Components</text>
+    <text x="284" y="318" font-size="12" font-weight="600" fill="#5F5E5E" class="sans">src/components/</text>
+    <text x="248" y="348" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">KpiGrid, LowStockCard,</text>
+    <text x="248" y="366" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">TabBar, AppHeader &amp; Steppers</text>
   </g>
 
   <!-- ============================================================
-       ZONE 2: DATA &amp; REPOSITORY LAYER (x = 500 to 715)
+       ZONE 2: DATA &amp; REPOSITORIES (x = 505 to 720)
        ============================================================ -->
-  <rect x="500" y="125" width="220" height="295" rx="14" class="zone-box" stroke="#B45309" fill="#FAF8F5" />
-  <rect x="515" y="113" width="180" height="22" rx="6" fill="#B45309" />
-  <text x="605" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">DATA &amp; REPOSITORIES</text>
+  <rect x="505" y="125" width="215" height="295" rx="14" class="zone-box" stroke="#B45309" fill="#FAF8F5" />
+  <rect x="520" y="113" width="180" height="22" rx="6" fill="#B45309" />
+  <text x="610" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">DATA &amp; REPOSITORIES</text>
 
   <!-- Node 2A: Repository Contracts -->
   <g>
-    <rect x="515" y="140" width="190" height="118" rx="10" class="node-card card-pulse-data" />
-    <rect x="530" y="152" width="28" height="28" rx="6" fill="#FEF3C7" class="glyph-box" />
-    <ellipse cx="544" cy="164" rx="6" ry="2.5" fill="none" stroke="#B45309" stroke-width="1.5" />
-    <path d="M 538 164 v 5 c 0 1.5 2.5 2.5 6 2.5 s 6 -1 6 -2.5 v -5" fill="none" stroke="#B45309" stroke-width="1.5" />
-    <text x="568" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Repositories</text>
-    <text x="568" y="182" font-size="12.5" font-weight="600" fill="#B45309" class="sans">src/data/repos/</text>
-    <text x="530" y="210" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">products, schools,</text>
-    <text x="530" y="228" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">orders &amp; notifications</text>
+    <rect x="520" y="140" width="185" height="118" rx="10" class="node-card card-pulse-data" />
+    <rect x="533" y="152" width="28" height="28" rx="6" fill="#FEF3C7" class="glyph-box" />
+    <ellipse cx="547" cy="164" rx="6" ry="2.5" fill="none" stroke="#B45309" stroke-width="1.5" />
+    <path d="M 541 164 v 5 c 0 1.5 2.5 2.5 6 2.5 s 6 -1 6 -2.5 v -5" fill="none" stroke="#B45309" stroke-width="1.5" />
+    <text x="569" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Repositories</text>
+    <text x="569" y="182" font-size="12" font-weight="600" fill="#B45309" class="sans">src/data/repos/</text>
+    <text x="533" y="210" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">products, schools,</text>
+    <text x="533" y="228" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">orders &amp; notifications</text>
   </g>
 
   <!-- Node 2B: Mappers &amp; API Service -->
   <g>
-    <rect x="515" y="275" width="190" height="120" rx="10" class="node-card card-pulse-data" />
-    <rect x="530" y="288" width="28" height="28" rx="6" fill="#FEF3C7" class="glyph-box" />
-    <path d="M 539 302 L 549 302 M 544 297 L 544 307" stroke="#B45309" stroke-width="1.8" stroke-linecap="round" />
-    <text x="568" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Mappers &amp; API</text>
-    <text x="568" y="318" font-size="12.5" font-weight="600" fill="#B45309" class="sans">mappers/ &amp; services/</text>
-    <text x="530" y="348" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">DTO adapters, apiClient,</text>
-    <text x="530" y="366" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">offline &amp; remote fallback</text>
+    <rect x="520" y="275" width="185" height="120" rx="10" class="node-card card-pulse-data" />
+    <rect x="533" y="288" width="28" height="28" rx="6" fill="#FEF3C7" class="glyph-box" />
+    <path d="M 542 302 L 552 302 M 547 297 L 547 307" stroke="#B45309" stroke-width="1.8" stroke-linecap="round" />
+    <text x="569" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Mappers &amp; API</text>
+    <text x="569" y="318" font-size="12" font-weight="600" fill="#B45309" class="sans">mappers/ &amp; services/</text>
+    <text x="533" y="348" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">DTO adapters, apiClient,</text>
+    <text x="533" y="366" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">offline &amp; remote fallback</text>
   </g>
 
   <!-- ============================================================
-       ZONE 3: CLIENT STATE &amp; HOOKS (x = 750 to 985)
+       ZONE 3: STATE &amp; DOMAIN HOOKS (x = 780 to 985)
        ============================================================ -->
-  <rect x="750" y="125" width="235" height="295" rx="14" class="zone-box" stroke="#1E9E5A" fill="#FAF8F5" />
-  <rect x="765" y="113" width="175" height="22" rx="6" fill="#1E9E5A" />
-  <text x="852" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">STATE &amp; DOMAIN HOOKS</text>
+  <rect x="780" y="125" width="205" height="295" rx="14" class="zone-box" stroke="#1E9E5A" fill="#FAF8F5" />
+  <rect x="795" y="113" width="175" height="22" rx="6" fill="#1E9E5A" />
+  <text x="882.5" y="128" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">STATE &amp; DOMAIN HOOKS</text>
 
   <!-- Node 3A: Custom Domain Hooks -->
   <g>
-    <rect x="765" y="140" width="205" height="118" rx="10" class="node-card card-pulse-client" />
-    <rect x="780" y="152" width="28" height="28" rx="6" fill="#E6F4EA" class="glyph-box" />
-    <rect x="785" y="159" width="18" height="14" rx="2" fill="none" stroke="#1E9E5A" stroke-width="1.6" />
-    <text x="818" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Domain Hooks</text>
-    <text x="818" y="182" font-size="12.5" font-weight="600" fill="#1E9E5A" class="sans">src/hooks/ layer</text>
-    <text x="780" y="210" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">useProducts, useSchools,</text>
-    <text x="780" y="228" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">useDashboardSummary, useAuth</text>
+    <rect x="795" y="140" width="175" height="118" rx="10" class="node-card card-pulse-client" />
+    <rect x="808" y="152" width="28" height="28" rx="6" fill="#E6F4EA" class="glyph-box" />
+    <rect x="813" y="159" width="18" height="14" rx="2" fill="none" stroke="#1E9E5A" stroke-width="1.6" />
+    <text x="844" y="166" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Domain Hooks</text>
+    <text x="844" y="182" font-size="12" font-weight="600" fill="#1E9E5A" class="sans">src/hooks/ layer</text>
+    <text x="808" y="210" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">useProducts, useSchools,</text>
+    <text x="808" y="228" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">useDashboard, useAuth</text>
   </g>
 
   <!-- Node 3B: Reactive Zustand Store -->
   <g>
-    <rect x="765" y="275" width="205" height="120" rx="10" class="node-card card-pulse-client" />
-    <rect x="780" y="288" width="28" height="28" rx="6" fill="#E6F4EA" class="glyph-box" />
-    <path d="M 794 297 C 789 297 787 301 787 303 C 787 308 794 311 794 311 C 794 311 801 308 801 303 C 801 301 799 297 794 297 Z" fill="none" stroke="#1E9E5A" stroke-width="1.6" />
-    <text x="818" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Zustand Store</text>
-    <text x="818" y="318" font-size="12.5" font-weight="600" fill="#1E9E5A" class="sans">src/store/ (v5.1)</text>
-    <text x="780" y="348" font-size="12.5" font-weight="500" fill="#1A1A1A" class="sans">useAppStore &amp; useAuthStore</text>
-    <text x="780" y="366" font-size="12" font-weight="400" fill="#5F5E5E" class="sans">Selective reactivity; minimal re-renders</text>
+    <rect x="795" y="275" width="175" height="120" rx="10" class="node-card card-pulse-client" />
+    <rect x="808" y="288" width="28" height="28" rx="6" fill="#E6F4EA" class="glyph-box" />
+    <path d="M 822 297 C 817 297 815 301 815 303 C 815 308 822 311 822 311 C 822 311 829 308 829 303 C 829 301 827 297 822 297 Z" fill="none" stroke="#1E9E5A" stroke-width="1.6" />
+    <text x="844" y="302" font-size="14" font-weight="700" fill="#1A1A1A" class="sans">Zustand Store</text>
+    <text x="844" y="318" font-size="12" font-weight="600" fill="#1E9E5A" class="sans">src/store/ (v5.1)</text>
+    <text x="808" y="348" font-size="12" font-weight="500" fill="#1A1A1A" class="sans">useAppStore &amp; useAuth</text>
+    <text x="808" y="366" font-size="11.5" font-weight="400" fill="#5F5E5E" class="sans">Selective reactivity</text>
   </g>
 
   <!-- ============================================================
        NUMBERED CONNECTOR WIRES &amp; FLOW LABELS (Zero Collisions!)
+       All badges have 12px+ clearance from all card & zone borders
        ============================================================ -->
-  <!-- 1. Operator Input: Device -> Presentation Screens -->
-  <line x1="165" y1="190" x2="225" y2="190" class="wire-red" marker-end="url(#arrRed)" />
-  <circle cx="195" cy="172" r="8.5" fill="#B0000F" />
-  <text x="195" y="175.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">1</text>
-  <text x="195" y="160" font-size="11" font-weight="700" fill="#B0000F" text-anchor="middle" class="sans">Nav</text>
+  <!-- 1. Operator Input: Device -> Presentation Screens (Gap: x=160 to 220) -->
+  <line x1="160" y1="190" x2="228" y2="190" class="wire-red" marker-end="url(#arrRed)" />
+  <circle cx="190" cy="172" r="8.5" fill="#B0000F" />
+  <text x="190" y="175.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">1</text>
+  <text x="190" y="160" font-size="11" font-weight="700" fill="#B0000F" text-anchor="middle" class="sans">Nav</text>
 
-  <!-- 2. Controller -> Domain Hooks Query -->
-  <line x1="440" y1="190" x2="765" y2="190" class="wire-green" marker-end="url(#arrGreen)" />
-  <circle cx="600" cy="172" r="8.5" fill="#1E9E5A" />
-  <text x="600" y="175.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">2</text>
-  <text x="600" y="160" font-size="11" font-weight="700" fill="#1E9E5A" text-anchor="middle" class="sans">Hook</text>
+  <!-- 2. Presentation -> Repositories Query (Gap: x=445 to 505) -->
+  <line x1="430" y1="190" x2="513" y2="190" class="wire-amber" marker-end="url(#arrAmber)" />
+  <circle cx="475" cy="172" r="8.5" fill="#B45309" />
+  <text x="475" y="175.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">2</text>
+  <text x="475" y="160" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle" class="sans">Query</text>
 
-  <!-- 3. Hooks -> Repositories Query -->
-  <line x1="765" y1="215" x2="705" y2="215" class="wire-amber" marker-end="url(#arrAmber)" />
-  <circle cx="735" cy="198" r="8.5" fill="#B45309" />
-  <text x="735" y="201.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">3</text>
-  <text x="735" y="186" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle" class="sans">Query</text>
+  <!-- 3. Repositories -> Domain Hooks Data Feed (Gap: x=720 to 780) -->
+  <line x1="705" y1="190" x2="788" y2="190" class="wire-amber" marker-end="url(#arrAmber)" />
+  <circle cx="750" cy="172" r="8.5" fill="#B45309" />
+  <text x="750" y="175.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">3</text>
+  <text x="750" y="160" font-size="11" font-weight="700" fill="#B45309" text-anchor="middle" class="sans">Data</text>
 
-  <!-- 4. Data Layer -> State Store Commit -->
-  <line x1="705" y1="340" x2="765" y2="340" class="wire-green" marker-end="url(#arrGreen)" />
-  <circle cx="735" cy="322" r="8.5" fill="#1E9E5A" />
-  <text x="735" y="325.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">4</text>
-  <text x="735" y="310" font-size="11" font-weight="700" fill="#1E9E5A" text-anchor="middle" class="sans">Sync</text>
+  <!-- 4. Data Layer -> State Store Commit (Gap: x=720 to 780) -->
+  <line x1="705" y1="340" x2="788" y2="340" class="wire-green" marker-end="url(#arrGreen)" />
+  <circle cx="750" cy="322" r="8.5" fill="#1E9E5A" />
+  <text x="750" y="325.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">4</text>
+  <text x="750" y="310" font-size="11" font-weight="700" fill="#1E9E5A" text-anchor="middle" class="sans">Sync</text>
 
-  <!-- 5. Reactive State Dispatch: Store -> Hooks -->
-  <line x1="870" y1="275" x2="870" y2="258" class="wire-green" marker-end="url(#arrGreen)" />
-  <circle cx="850" cy="267" r="8" fill="#1E9E5A" />
-  <text x="850" y="270.5" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">5</text>
-  <text x="888" y="270" font-size="11" font-weight="700" fill="#1E9E5A" class="sans">State</text>
+  <!-- 5. Reactive State Dispatch: Store -> Hooks (Inside Zone 3) -->
+  <line x1="882" y1="275" x2="882" y2="258" class="wire-green" marker-end="url(#arrGreen)" />
+  <circle cx="862" cy="267" r="8" fill="#1E9E5A" />
+  <text x="862" y="270.5" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">5</text>
+  <text x="900" y="270" font-size="11" font-weight="700" fill="#1E9E5A" class="sans">State</text>
 
-  <!-- 6. View Update: Presentation -> Native Views -->
-  <line x1="225" y1="340" x2="165" y2="340" class="wire-red" marker-end="url(#arrRed)" />
-  <circle cx="195" cy="322" r="8.5" fill="#B0000F" />
-  <text x="195" y="325.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">6</text>
-  <text x="195" y="310" font-size="11" font-weight="700" fill="#B0000F" text-anchor="middle" class="sans">Render</text>
+  <!-- 6. View Update: Presentation -> Native Views (Gap: x=160 to 220) -->
+  <line x1="228" y1="340" x2="160" y2="340" class="wire-red" marker-end="url(#arrRed)" />
+  <circle cx="190" cy="322" r="8.5" fill="#B0000F" />
+  <text x="190" y="325.5" font-size="10.5" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">6</text>
+  <text x="190" y="310" font-size="11" font-weight="700" fill="#B0000F" text-anchor="middle" class="sans">Render</text>
 
   <!-- ============================================================
        FOUNDATION LAYER: SHARED INFRASTRUCTURE (y = 445 to 555)
        ============================================================ -->
   <!-- Layer Container Box -->
-  <rect x="35" y="445" width="950" height="105" rx="14" fill="#FAF8F5" stroke="#E8E3DE" stroke-width="1.2" />
+  <rect x="35" y="445" width="950" height="105" rx="14" fill="#FAF8F5" stroke="#E8E4DE" stroke-width="1.2" />
   <rect x="50" y="434" width="205" height="22" rx="6" fill="#1A1A1A" />
   <text x="152" y="449" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle" class="sans">SHARED FOUNDATION LAYER</text>
 
   <!-- Foundation Tile 1: UI Primitives -->
   <g transform="translate(50, 465)">
-    <rect width="215" height="72" rx="8" fill="#FFFFFF" stroke="#E8E3DE" stroke-width="1" />
+    <rect width="215" height="72" rx="8" fill="#FFFFFF" stroke="#E8E4DE" stroke-width="1" />
     <text x="14" y="20" font-size="13.5" font-weight="700" fill="#1A1A1A" class="sans">UI Primitives</text>
     <text x="14" y="36" font-size="11.5" font-weight="600" fill="#B0000F" class="sans">src/components/ui/</text>
     <text x="14" y="52" font-size="11.5" font-weight="500" fill="#5F5E5E" class="sans">Button, Card, Chip, StatusBadge,</text>
@@ -268,7 +269,7 @@
 
   <!-- Foundation Tile 2: Theme Tokens -->
   <g transform="translate(280, 465)">
-    <rect width="225" height="72" rx="8" fill="#FFFFFF" stroke="#E8E3DE" stroke-width="1" />
+    <rect width="225" height="72" rx="8" fill="#FFFFFF" stroke="#E8E4DE" stroke-width="1" />
     <text x="14" y="20" font-size="13.5" font-weight="700" fill="#1A1A1A" class="sans">Theme System</text>
     <text x="14" y="36" font-size="11.5" font-weight="600" fill="#B0000F" class="sans">src/theme/ tokens</text>
     <text x="14" y="52" font-size="11.5" font-weight="500" fill="#5F5E5E" class="sans">16 semantic color tokens,</text>
@@ -277,7 +278,7 @@
 
   <!-- Foundation Tile 3: Core Utilities -->
   <g transform="translate(520, 465)">
-    <rect width="215" height="72" rx="8" fill="#FFFFFF" stroke="#E8E3DE" stroke-width="1" />
+    <rect width="215" height="72" rx="8" fill="#FFFFFF" stroke="#E8E4DE" stroke-width="1" />
     <text x="14" y="20" font-size="13.5" font-weight="700" fill="#1A1A1A" class="sans">Core Utilities</text>
     <text x="14" y="36" font-size="11.5" font-weight="600" fill="#1A1A1A" class="sans">src/utils/ &amp; constants/</text>
     <text x="14" y="52" font-size="11.5" font-weight="500" fill="#5F5E5E" class="sans">formatPrice (₹), array filters,</text>
@@ -286,7 +287,7 @@
 
   <!-- Foundation Tile 4: Storage & Vault -->
   <g transform="translate(750, 465)">
-    <rect width="220" height="72" rx="8" fill="#FFFFFF" stroke="#E8E3DE" stroke-width="1" />
+    <rect width="220" height="72" rx="8" fill="#FFFFFF" stroke="#E8E4DE" stroke-width="1" />
     <text x="14" y="20" font-size="13.5" font-weight="700" fill="#1A1A1A" class="sans">Storage &amp; Vault</text>
     <text x="14" y="36" font-size="11.5" font-weight="600" fill="#5F5E5E" class="sans">Local Persistence</text>
     <text x="14" y="52" font-size="11.5" font-weight="500" fill="#5F5E5E" class="sans">AsyncStorage (offline cache)</text>
@@ -303,14 +304,14 @@
     </animateMotion>
   </circle>
 
-  <!-- Packet 2: Hook Subscription -->
-  <circle r="4.5" fill="#1E9E5A" filter="url(#packetBlur)">
-    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.8s">
+  <!-- Packet 2: Repo Query -->
+  <circle r="4.5" fill="#B45309" filter="url(#packetBlur)">
+    <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.6s">
       <mpath href="#pathFlow2" />
     </animateMotion>
   </circle>
 
-  <!-- Packet 3: Repo Query -->
+  <!-- Packet 3: Hooks Data Feed -->
   <circle r="4.5" fill="#B45309" filter="url(#packetBlur)">
     <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.2s">
       <mpath href="#pathFlow3" />
@@ -319,7 +320,7 @@
 
   <!-- Packet 4: State Sync -->
   <circle r="4.5" fill="#1E9E5A" filter="url(#packetBlur)">
-    <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.6s">
+    <animateMotion dur="2.4s" repeatCount="indefinite" begin="1.8s">
       <mpath href="#pathFlow4" />
     </animateMotion>
   </circle>
@@ -339,18 +340,18 @@
   </circle>
 
   <!-- ============================================================
-       DIAGRAM FOOTER / LEGEND (Crisp, perfectly spaced)
+       DIAGRAM FOOTER / LEGEND (Crisp, perfectly spaced, zero overlaps)
        ============================================================ -->
   <g transform="translate(35, 580)">
     <circle cx="8" cy="8" r="4.5" fill="#B0000F" />
-    <text x="20" y="12" font-size="12" font-weight="700" fill="#1A1A1A" class="sans">Interaction &amp; Render Path (Flow 1, 6)</text>
+    <text x="20" y="12" font-size="11.5" font-weight="700" fill="#1A1A1A" class="sans">Interaction &amp; Render (Flow 1, 6)</text>
 
-    <circle cx="280" cy="8" r="4.5" fill="#B45309" />
-    <text x="292" y="12" font-size="12" font-weight="700" fill="#1A1A1A" class="sans">Data &amp; Repository Path (Flow 3)</text>
+    <circle cx="260" cy="8" r="4.5" fill="#B45309" />
+    <text x="272" y="12" font-size="11.5" font-weight="700" fill="#1A1A1A" class="sans">Repository Pipeline (Flow 2–3)</text>
 
-    <circle cx="520" cy="8" r="4.5" fill="#1E9E5A" />
-    <text x="532" y="12" font-size="12" font-weight="700" fill="#1E9E5A" class="sans">Zustand &amp; Reactive Store (Flow 2, 4, 5)</text>
+    <circle cx="515" cy="8" r="4.5" fill="#1E9E5A" />
+    <text x="527" y="12" font-size="11.5" font-weight="700" fill="#1E9E5A" class="sans">Zustand Store Sync (Flow 4–5)</text>
 
-    <text x="950" y="12" font-size="12" font-weight="600" fill="#5F5E5E" text-anchor="end" class="sans">Design Tokens · #FAF8F5 Warm Paper</text>
+    <text x="950" y="12" font-size="11.5" font-weight="600" fill="#6B6B6B" text-anchor="end" class="sans">Design Tokens · #FAF8F5 Warm Paper</text>
   </g>
 </svg>
